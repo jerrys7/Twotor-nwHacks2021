@@ -16,6 +16,6 @@ public class Main {
         s.add("english");
         Person a = new Person("jerry", "sun", 10, 12, m, s, "bmss",
                 coursesInterested, true, 5);
-        
+
     }
 }
