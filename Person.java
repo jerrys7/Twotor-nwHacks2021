@@ -19,7 +19,7 @@ public class Person implements Comparable{
     private Set<String> matches = new HashSet<>();
 
     public Person(String FirstName, String LastName, int grade, int age, Map<String, Integer> coursesTakenMap,
-                  String school, Set<String> coursesInterested, String[] subjectsInterested,
+                  Set<String> coursesTaken, String school, Set<String> coursesInterested, String[] subjectsInterested,
                   boolean transcriptVerified, double rating) {
         this.FirstName = FirstName;
         this.LastName = LastName;
@@ -28,6 +28,7 @@ public class Person implements Comparable{
         this.coursesInterested = coursesInterested;
         this.coursesTakenMap = coursesTakenMap;
         this.school = school;
+        this.coursesInterested = coursesInterested;
         this.subjectsInterested = subjectsInterested;
         this.transcriptVerified = transcriptVerified;
         this.rating = rating;
