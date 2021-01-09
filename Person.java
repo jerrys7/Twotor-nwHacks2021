@@ -28,7 +28,6 @@ public class Person implements Comparable{
         this.coursesInterested = coursesInterested;
         this.coursesTakenMap = coursesTakenMap;
         this.school = school;
-        this.coursesInterested = coursesInterested;
         this.transcriptVerified = transcriptVerified;
         this.rating = rating;
         this.coursesTaken = coursesTaken;
