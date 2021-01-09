@@ -13,14 +13,13 @@ public class Person implements Comparable{
     private Set<String> coursesTaken;
     private String school;
     private Set<String> coursesInterested;
-    private String[] subjectsInterested;
     private boolean transcriptVerified;
     private double rating;
     private Set<String> matches = new HashSet<>();
     private int userID;
 
     public Person(String FirstName, String LastName, int grade, int age, Map<String, Integer> coursesTakenMap,
-                  Set<String> coursesTaken, String school, Set<String> coursesInterested, String[] subjectsInterested,
+                  Set<String> coursesTaken, String school, Set<String> coursesInterested,
                   boolean transcriptVerified, double rating) {
         this.FirstName = FirstName;
         this.LastName = LastName;
@@ -30,7 +29,6 @@ public class Person implements Comparable{
         this.coursesTakenMap = coursesTakenMap;
         this.school = school;
         this.coursesInterested = coursesInterested;
-        this.subjectsInterested = subjectsInterested;
         this.transcriptVerified = transcriptVerified;
         this.rating = rating;
         this.coursesTaken = coursesTaken;
@@ -44,10 +42,6 @@ public class Person implements Comparable{
 
     public Set<String> getCoursesInterested() {
         return this.coursesInterested;
-    }
-
-    public String[] getSubjectsInterested() {
-        return this.subjectsInterested;
     }
 
     public boolean isValid() {

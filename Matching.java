@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class Matching {
@@ -15,7 +14,7 @@ public class Matching {
         Set<String> pCoursesTaken = p.getCoursesTaken();
         Set<Match> matches = new HashSet<>();
         for (Person t: persons) {
-            if (t.compareTo(p) != 0) {
+            if (t.compareTo(p) != 0 && t.isValid()) {
                 Set<String> tCoursesInterested = t.getCoursesInterested();
                 Set<String> tCoursesTaken = t.getCoursesTaken();
                 Set<String> interestedAndOffered = new HashSet<>();
