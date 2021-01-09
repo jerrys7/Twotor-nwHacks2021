@@ -32,7 +32,7 @@ public class Matching {
                     }
                 }
                 if (interestedAndOffered.size() > 0 && offeredAndInterested.size() > 0) {
-                    Match m = new Match(t, offeredAndInterested, interestedAndOffered);
+                    Match m = new Match(t, offeredAndInterested, interestedAndOffered, new HashSet<Pair>());
                     matches.add(m);
                 }
             }
