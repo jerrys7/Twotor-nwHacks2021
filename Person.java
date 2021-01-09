@@ -1,14 +1,16 @@
+import java.util.Map;
+
 public class Person{
     private String FirstName;
     private String LastName;
     private int grade;
-    private Map<String, int> coursesTaken;
+    private Map<String, Integer> coursesTaken;
     private String school;
     private String[] coursesInterested;
     private String[] subjectsInterested;
     private boolean transcriptVerified;
 
-    public Person(String FirstName, String LastName, int grade, Map<String, int> coursesTaken, String school,
+    public Person(String FirstName, String LastName, int grade, Map<String, Integer> coursesTaken, String school,
                   String[] coursesInterested, String[] subjectsInterested, boolean transcriptVerified) {
         this.FirstName = FirstName;
         this.LastName = LastName;
@@ -21,7 +23,7 @@ public class Person{
         this.transcriptVerified = transcriptVerified;
     }
 
-    public Map<String, int> getCoursesTaken() {
+    public Map<String, Integer> getCoursesTaken() {
         return this.coursesTaken;
     }
 
@@ -30,7 +32,7 @@ public class Person{
     }
 
     public String[] getSubjectsInterested() {
-        return this.getSubjectsInterested;
+        return this.subjectsInterested;
     }
 
     public boolean isValid() {
