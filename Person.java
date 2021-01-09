@@ -4,14 +4,17 @@ public class Person{
     private String[] coursesTaken;
     private String school;
     private String[] coursesInterested;
+    private boolean transcriptVerified;
 
-    public Person(String FirstName, String LastName, String[] coursesTaken, String school, String[] coursesInterested) {
+    public Person(String FirstName, String LastName, String[] coursesTaken, String school,
+                  String[] coursesInterested, boolean transcriptVerified) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.coursesInterested = coursesInterested;
         this.coursesTaken = coursesTaken;
         this.school = school;
         this.coursesInterested = coursesInterested;
+        this.transcriptVerified = transcriptVerified;
     }
 
     public String[] getCoursesTaken() {
@@ -20,6 +23,10 @@ public class Person{
 
     public String[] getCoursesInterested() {
         return this.coursesInterested;
+    }
+
+    public boolean isValid() {
+        return transcriptVerified;
     }
 
 }
