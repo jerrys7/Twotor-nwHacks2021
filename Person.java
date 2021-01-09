@@ -17,6 +17,7 @@ public class Person implements Comparable{
     private boolean transcriptVerified;
     private double rating;
     private Set<String> matches = new HashSet<>();
+    private int userID;
 
     public Person(String FirstName, String LastName, int grade, int age, Map<String, Integer> coursesTakenMap,
                   Set<String> coursesTaken, String school, Set<String> coursesInterested, String[] subjectsInterested,
@@ -32,6 +33,8 @@ public class Person implements Comparable{
         this.subjectsInterested = subjectsInterested;
         this.transcriptVerified = transcriptVerified;
         this.rating = rating;
+        this.coursesTaken = coursesTaken;
+        userID = (FirstName + LastName + school).hashCode();
         users.add(this);
     }
 
@@ -73,6 +76,11 @@ public class Person implements Comparable{
 
     @Override
     public int compareTo(Object o) {
-        return 0;
+        Person p = (Person) o;
+        if (p.userID == this.userID) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
 }
