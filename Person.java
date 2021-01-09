@@ -1,37 +1,38 @@
 import java.util.Map;
+import java.util.Set;
 
-public class Person{
+public class Person implements Comparable<Person>{
     private String FirstName;
     private String LastName;
     private int grade;
     private int age;
-    private Map<String, Integer> coursesTaken;
+    private Map<String, Integer> coursesTakenMap;
+    private Set<String> coursesTaken();
     private String school;
-    private String[] coursesInterested;
+    private Set<String> coursesInterested;
     private String[] subjectsInterested;
     private boolean transcriptVerified;
     private double rating;
 
-    public Person(String FirstName, String LastName, int grade, int age, Map<String, Integer> coursesTaken, String school,
-                  String[] coursesInterested, String[] subjectsInterested, boolean transcriptVerified, double rating) {
+    public Person(String FirstName, String LastName, int grade, int age, Map<String, Integer> coursesTakenMap, String school,
+                  Set<String> coursesInterested, String[] subjectsInterested, boolean transcriptVerified, double rating) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.grade = grade;
         this.age = age;
         this.coursesInterested = coursesInterested;
-        this.coursesTaken = coursesTaken;
+        this.coursesTakenMap = coursesTakenMap;
         this.school = school;
-        this.coursesInterested = coursesInterested;
         this.subjectsInterested = subjectsInterested;
         this.transcriptVerified = transcriptVerified;
         this.rating = rating;
     }
 
-    public Map<String, Integer> getCoursesTaken() {
-        return this.coursesTaken;
+    public Map<String, Integer> getCoursesTakenMap() {
+        return this.coursesTakenMap;
     }
 
-    public String[] getCoursesInterested() {
+    public Set<String> getCoursesInterested() {
         return this.coursesInterested;
     }
 
@@ -47,4 +48,11 @@ public class Person{
         return (rating <= 2.5);
     }
 
+    @Override
+    public int compareTo(Person o) {
+        return 0;
+    }
+
+    public Set<String> getCoursesTaken() {
+    }
 }
