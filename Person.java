@@ -3,7 +3,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class Person implements Comparable<{
+public class Person implements Comparable{
     public static ArrayList<Person> users = new ArrayList<>();
     private String FirstName;
     private String LastName;
