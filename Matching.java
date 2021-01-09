@@ -18,11 +18,12 @@ public class Matching {
                 Person t = persons.get(j);
                 Set<String> tCoursesInterested = t.getCoursesInterested();
                 Set<String> tCoursesTaken = t.getCoursesTaken();
+                String courseToBeAdded;
                 int result = -2;
                 for (String pCourse : pCoursesInterested) {
                     if (tCoursesTaken.contains(pCourse)) {
                         result++;
-                        break;
+                        courseToBeAdded = pCourse;
                     }
                 }
                 if (result == -1) {
