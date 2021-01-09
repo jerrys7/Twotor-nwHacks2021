@@ -1,8 +1,10 @@
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class Person implements Comparable<Person>{
+public class Person implements Comparable<{
+    public static ArrayList<Person> users = new ArrayList<>();
     private String FirstName;
     private String LastName;
     private int grade;
@@ -16,8 +18,9 @@ public class Person implements Comparable<Person>{
     private double rating;
     private Set<String> matches = new HashSet<>();
 
-    public Person(String FirstName, String LastName, int grade, int age, Map<String, Integer> coursesTakenMap, String school,
-                  Set<String> coursesInterested, String[] subjectsInterested, boolean transcriptVerified, double rating) {
+    public Person(String FirstName, String LastName, int grade, int age, Map<String, Integer> coursesTakenMap,
+                  String school, Set<String> coursesInterested, String[] subjectsInterested,
+                  boolean transcriptVerified, double rating) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.grade = grade;
@@ -28,6 +31,7 @@ public class Person implements Comparable<Person>{
         this.subjectsInterested = subjectsInterested;
         this.transcriptVerified = transcriptVerified;
         this.rating = rating;
+        users.add(this);
     }
 
     public Map<String, Integer> getCoursesTakenMap() {
@@ -43,16 +47,11 @@ public class Person implements Comparable<Person>{
     }
 
     public boolean isValid() {
-        return transcriptVerified;
+        return transcriptVerified && eval();
     }
 
     public boolean eval() {
         return (rating <= 2.5);
-    }
-
-    @Override
-    public int compareTo(Person o) {
-        return 0;
     }
 
     public Set<String> getCoursesTaken() {
@@ -69,5 +68,10 @@ public class Person implements Comparable<Person>{
 
     public void addMatch(String s) {
         matches.add(s);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
